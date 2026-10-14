@@ -1,6 +1,6 @@
 {
   "id": "STS2Count",
-  "name": "杂耍计数器+高亮 / Juggling Counter + Highlight",
+  "name": "杂耍计数器+高亮 / Juggling Counter",
   "author": "STS2Count",
   "description": "显示杂耍倒计数，即将触发复制时高亮攻击牌。仅修改显示。\nShows a Juggling countdown and highlights Attack cards when the next attack will be copied. Visual only.",
   "version": "0.1.0",
