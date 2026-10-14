@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GameDir Condition="'$(GameDir)' == '' and '$(STS2_GAME_DIR)' != ''">$(STS2_GAME_DIR)</GameDir>
+    <GameDataDir>$(GameDir)\data_sts2_windows_x86_64</GameDataDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sts2" HintPath="$(GameDataDir)\sts2.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GameDataDir)\0Harmony.dll" Private="false" />
+    <Reference Include="GodotSharp" HintPath="$(GameDataDir)\GodotSharp.dll" Private="false" />
+  </ItemGroup>
+  <Target Name="CheckGameReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(GameDir)' == ''" Text="Set STS2_GAME_DIR or pass -p:GameDir=your-game-directory." />
+    <Error Condition="!Exists('$(GameDataDir)\sts2.dll')" Text="Game DLL not found. Set STS2_GAME_DIR or pass -p:GameDir=your-game-directory." />
+  </Target>
+</Project>

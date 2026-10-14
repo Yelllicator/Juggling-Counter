@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>STS2Count</AssemblyName>
+    <RootNamespace>STS2Count</RootNamespace>
+    <Version>0.1.0</Version>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src/**/*.cs" />
+  </ItemGroup>
+  <Target Name="PackageMod" AfterTargets="Build">
+    <MakeDir Directories="$(MSBuildProjectDirectory)/dist/STS2Count" />
+    <Copy SourceFiles="$(TargetPath);$(MSBuildProjectDirectory)/STS2Count.json" DestinationFolder="$(MSBuildProjectDirectory)/dist/STS2Count" />
+  </Target>
+</Project>

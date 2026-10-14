@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>STS2Count.Tests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../STS2Count.csproj" />
+    <Reference Update="sts2;0Harmony;GodotSharp" Private="true" />
+    <None Include="../STS2Count.json" Link="STS2Count.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

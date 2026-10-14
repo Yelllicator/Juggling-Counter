@@ -1,0 +1,20 @@
+bin/
+obj/
+.work/
+dist/
+*.user
+*.log
+*.dll
+*.pdb
+*.zip
+
+# Local publishing tools, assets, and Steam upload state.
+tools/
+assets/
+workshop/
+upload-workshop.cmd
+
+# Machine-specific verification evidence; only public images belong in docs.
+docs/*
+!docs/images/
+tests/verification.json
